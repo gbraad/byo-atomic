@@ -2,6 +2,12 @@ Build Your Own Atomic - base
 ============================
 
 
+## Images for compose
+
+  * [Base](https://gitlab.com/gbraad/byo-atomic)
+  * [Toolbox](https://gitlab.com/gbraad/byo-atomic-toolbox)
+
+
 ## Variants
 
   * [CentOS](https://gitlab.com/gbraad/byo-atomic-centos/)
