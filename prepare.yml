@@ -1,0 +1,31 @@
+#!/usr/bin/env ansible-playbook
+---
+- hosts: localhost
+
+  tasks:
+  - name: Install list of required packages
+    package: name={{ item }} state=installed
+    become: yes
+    become_method: sudo
+    with_items:
+    - git
+    - rpm-ostree
+    - polipo
+
+  - name: Clean package cache
+    command: >-
+      dnf clean all
+      
+  - name: Create directory structure
+    file: path="{{ item }}" state=directory mode=750
+    with_items:
+    - "/srv/repo"
+    - "/home/working"
+
+  - name: Initialize repository
+    command: >-
+      ostree --repo=/srv/repo init --mode=archive-z2
+
+  - name: Start cache and simple webserver
+    command: >-
+      CMD polipo; pushd /srv/repo; python -m SimpleHTTPServer; popd
