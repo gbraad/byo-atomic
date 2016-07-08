@@ -1,7 +1,8 @@
 FROM fedora:23
 
-# Install packages
-RUN dnf install -y ansible rpm-ostree git polipo python; \
+# Run update and install packages
+RUN dnf update -y; \
+    dnf install -y ansible rpm-ostree git polipo python; \
     dnf clean all
 
 # Create working dir, clone fedora and centos atomic definitions
