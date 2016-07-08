@@ -12,6 +12,7 @@ Build Your Own Atomic - base
 
   * [CentOS](https://gitlab.com/gbraad/byo-atomic-centos/)
   * [Fedora](https://gitlab.com/gbraad/byo-atomic-fedora/)
+  * [RDO Test](https://gitlab.com/gbraad/byo-atomic-rdo/)
 
 
 ## Links
