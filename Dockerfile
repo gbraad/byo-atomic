@@ -1,4 +1,4 @@
-FROM fedora:23
+FROM fedora:24
 
 # Run update and install packages
 RUN dnf update -y; \
