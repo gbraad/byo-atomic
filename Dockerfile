@@ -6,7 +6,7 @@ RUN dnf update -y; \
     dnf clean all
 
 # Create working dir, clone fedora and centos atomic definitions
-RUN mkdir -p /home/working; \
+RUN mkdir -p /workspace ; \
 
 # Create and initialize repo directory
 
@@ -15,7 +15,8 @@ RUN mkdir -p /home/working; \
 
 # Expose default SimpleHTTPServer port, set working dir
 EXPOSE 8000
-WORKDIR /home/working
+WORKDIR /workspace
+VOLUME /workspace
 
 # Start web proxy and SimpleHTTPServer
 CMD polipo; pushd /srv/repo; python -m SimpleHTTPServer; popd
