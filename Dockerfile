@@ -13,9 +13,6 @@ RUN mkdir -p /workspace ; \
     mkdir -p /srv/repo && \
     ostree --repo=/srv/repo init --mode=archive-z2
 
-# Disable SELinux
-RUN echo SELINUX=disabled > /etc/selinux/config
-
 # Expose default SimpleHTTPServer port, set working dir
 EXPOSE 8000
 WORKDIR /workspace
