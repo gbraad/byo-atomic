@@ -16,7 +16,9 @@ Build Your Own Atomic - base
     [![build status](https://gitlab.com/gbraad/byo-atomic-centos/badges/master/build.svg)](https://gitlab.com/gbraad/byo-atomic-centos)
   * [Fedora](https://gitlab.com/gbraad/byo-atomic-fedora/)  
     [![build status](https://gitlab.com/gbraad/byo-atomic-fedora/badges/master/build.svg)](https://gitlab.com/gbraad/byo-atomic-fedora)
-  * [RDO Test](https://gitlab.com/gbraad/byo-atomic-rdo/)  
+  * [Ceph Test](https://gitlab.com/gbraad/byo-atomic-ceph/)  
+    [![build status](https://gitlab.com/gbraad/byo-atomic-ceph/badges/master/build.svg)](https://gitlab.com/gbraad/byo-atomic-ceph)
+  * [RDO Test](https://gitlab.com/gbraad/byo-atomic-rdo/) (Not active)  
     [![build status](https://gitlab.com/gbraad/byo-atomic-rdo/badges/master/build.svg)](https://gitlab.com/gbraad/byo-atomic-rdo)
 
 
