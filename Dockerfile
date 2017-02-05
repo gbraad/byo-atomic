@@ -1,8 +1,8 @@
-FROM fedora:24
+FROM fedora:25
 
 # Run update and install packages
 RUN dnf update -y; \
-    dnf install -y ansible rpm-ostree git polipo python; \
+    dnf install -y ansible rpm-ostree git; \
     dnf clean all
 
 # Create working dir, clone fedora and centos atomic definitions
@@ -18,5 +18,5 @@ EXPOSE 8000
 WORKDIR /workspace
 VOLUME /workspace
 
-# Start web proxy and SimpleHTTPServer
-CMD polipo; pushd /srv/repo; python -m SimpleHTTPServer; popd
+# Start web server
+CMD ostree trivial-httpd -p 8000 /svr/repo

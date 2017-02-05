@@ -10,7 +10,6 @@
     with_items:
     - git
     - rpm-ostree
-    - polipo
 
   - name: Clean package cache
     command: >-
@@ -20,12 +19,12 @@
     file: path="{{ item }}" state=directory mode=750
     with_items:
     - "/srv/repo"
-    - "/home/working"
+    - "/workspace"
 
   - name: Initialize repository
     command: >-
       ostree --repo=/srv/repo init --mode=archive-z2
 
-  - name: Start cache and simple webserver
+  - name: Start webserver
     command: >-
-      CMD polipo; pushd /srv/repo; python -m SimpleHTTPServer; popd
+      ostree trivial-httpd -p 8080 /srv/repo
